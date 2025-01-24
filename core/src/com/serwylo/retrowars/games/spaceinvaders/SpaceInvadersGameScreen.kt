@@ -106,7 +106,23 @@ class SpaceInvadersGameScreen(game: RetrowarsGame) : GameScreen(
             state.cellWidth,
             state.cellHeight,
         )
+        r.end();
+        r.begin(ShapeRenderer.ShapeType.Filled)
+        r.color = Color.RED
+        r.triangle(
+            state.playerX - state.cellWidth / 2,
+            state.padding,
+
+            state.playerX - state.cellWidth / 2 + state.cellWidth / 2,
+            state.padding + state.cellHeight * 1.5f,
+
+            state.playerX - state.cellWidth / 2 + state.cellWidth,
+            state.padding
+        )
+
         r.end()
+
+
     }
 
     override fun renderGame(camera: Camera) {
